@@ -61,12 +61,12 @@ int	main(int ac, char **av)
 			if (binary[j] == '0')
 			{
 				kill(pid, SIGUSR1);
-				usleep(100);
+				usleep(50);
 			}
 			else if (binary[j] == '1')
 			{
 				kill(pid, SIGUSR2);
-				usleep(100);
+				usleep(50);
 			}
 			j++;
 		}

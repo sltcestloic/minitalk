@@ -20,7 +20,6 @@ char	*rev_str(char *str)
 
 char	*ascii_to_binary(unsigned char nbr)
 {
-	long	nb;
 	int		i;
 	char	*ret;
 	char	base[2];
@@ -28,11 +27,10 @@ char	*ascii_to_binary(unsigned char nbr)
 	i = 0;
 	ft_strcpy(base, "01");
 	ret = ft_strdup("00000000");
-	nb = nbr;
-	while (nb)
+	while (nbr)
 	{
-		ret[i++] = base[nb % 2];
-		nb /= 2;
+		ret[i++] = base[nbr % 2];
+		nbr /= 2;
 	}
 	return (rev_str(ret));
 }

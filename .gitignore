@@ -52,9 +52,11 @@ Module.symvers
 # MacOS
 .DS_Store
 
-# Project executabled
+# Project executables
 client
+srcs/client/client
 server
+srcs/server/server
 
 # TODO
 TODO

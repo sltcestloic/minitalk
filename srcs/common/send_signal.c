@@ -30,10 +30,11 @@ void	send_null(int pid)
 	i = 0;
 	while (i < 8)
 	{
-		kill(pid, SIGUSR1);
+		send_signal(pid, 0);
 		usleep(SLEEP_TIME);
 		i++;
 	}
+	usleep(SLEEP_TIME);
 }
 
 void	send_msg(char *msg, int pid)

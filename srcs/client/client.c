@@ -13,6 +13,7 @@ void	send_pid(int pid)
 	while (pid_str[i])
 	{
 		binary = ascii_to_binary(pid_str[i]);
+		printf("send %c = %s\n", pid_str[i], binary);
 		while (binary[j])
 		{
 			if (binary[j] == '0')

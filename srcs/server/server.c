@@ -1,6 +1,6 @@
 #include "minitalk.h"
 
-void	print_msg(char **msg)
+void	print_msg(char *msg)
 {
 	static int	sent = 0;
 	size_t		i;
@@ -10,18 +10,15 @@ void	print_msg(char **msg)
 	j = 0;
 	if (!sent)
 	{
-		ft_putendl_fd(*msg, 1);
+		ft_putendl_fd(msg, 1);
 		sent = 1;
 	}
 	else
 	{
 		sent = 0;
-		usleep(SLEEP_TIME);
-		kill(ft_atoi(*msg), SIGUSR1);
+		kill(ft_atoi(msg), SIGUSR1);
 		printf("answer sent\n");
 	}
-	free(*msg);
-	*msg = NULL;
 }
 
 void	append_byte(char c)
@@ -32,7 +29,11 @@ void	append_byte(char c)
 
 	printf("%c\n", c);
 	if (!c)
-		print_msg(&msg);
+	{
+		print_msg(msg);
+		free(msg);
+		msg = NULL;
+	}
 	char_str[0] = c;
 	char_str[1] = 0;
 	if (!msg)
@@ -61,6 +62,7 @@ void	append_bit(char c)
 	if (ft_strlen(str) == 8)
 	{
 		chr = ft_atoi_base(str, "01");
+		printf("%s\n", str);
 		append_byte(chr);
 		free(str);
 		str = NULL;

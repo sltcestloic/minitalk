@@ -24,13 +24,13 @@ char	*ascii_to_binary(unsigned char nbr)
 	char	*ret;
 	char	base[2];
 
-	i = 0;
+	i = 7;
 	ft_strcpy(base, "01");
 	ret = ft_strdup("00000000");
 	while (nbr)
 	{
-		ret[i++] = base[nbr % 2];
+		ret[i--] = base[nbr % 2];
 		nbr /= 2;
 	}
-	return (rev_str(ret));
+	return (ret);
 }

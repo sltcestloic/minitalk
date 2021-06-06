@@ -6,11 +6,12 @@
 #    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2021/06/04 12:37:37 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2021/06/06 08:31:14 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRC		= convert.c
+SRC		= convert.c \
+			strnew.c
 OBJS	= ${SRC:.c=.o}
 INCS	= ../../includes
 NAME	= common.a

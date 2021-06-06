@@ -1,15 +1,5 @@
 #include "minitalk.h"
 
-char	*strnew(char c)
-{
-	char	*ret;
-
-	ret = malloc (sizeof(char) * 2);
-	ret[0] = c;
-	ret[1] = 0;
-	return (ret);
-}
-
 void	append_byte(char c)
 {
 	static char	*msg;
@@ -51,6 +41,7 @@ void	append_bit(char c)
 	if (ft_strlen(str) == 8)
 	{
 		chr = ft_atoi_base(str, "01");
+		printf("%s\n", str);
 		append_byte(chr);
 		free(str);
 		str = NULL;

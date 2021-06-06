@@ -6,7 +6,7 @@
 /*   By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 08:45:51 by lbertran          #+#    #+#             */
-/*   Updated: 2021/06/04 13:07:01 by lbertran         ###   ########lyon.fr   */
+/*   Updated: 2021/06/06 08:31:05 by lbertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 # include <signal.h>
 # include <unistd.h>
 # include "../libft/libft.h"
+# define SLEEP_TIME 60
 
 char	*ascii_to_binary(unsigned char nbr);
+char	*strnew(char c);
 
 /*
 ** Text colors

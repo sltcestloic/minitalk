@@ -25,16 +25,13 @@ void	append_byte(char c)
 	}
 	char_str[0] = c;
 	char_str[1] = 0;
-	//write(1, &c, 1);
 	if (!msg)
 		msg = strnew(c);
 	else
 	{
 		tmp = msg;
-		//printf("%c -> %s\n", c, tmp);
 		msg = ft_strjoin(tmp, char_str);
 		free(tmp);
-		//printf("new msg: %s\n", msg);
 	}
 }
 
@@ -43,7 +40,6 @@ void	append_bit(char c)
 	static char	*str;
 	int			chr;
 
-	//write(1, &c, 1);
 	if (!str)
 	{
 		str = malloc(sizeof(char) * 9);
@@ -56,7 +52,6 @@ void	append_bit(char c)
 	{
 		chr = ft_atoi_base(str, "01");
 		append_byte(chr);
-		//write(1, &chr, 1);
 		free(str);
 		str = NULL;
 	}

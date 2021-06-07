@@ -17,7 +17,6 @@ void	print_msg(char *msg)
 	{
 		sent = 0;
 		kill(ft_atoi(msg), SIGUSR1);
-		printf("answer sent\n");
 	}
 }
 
@@ -27,7 +26,6 @@ void	append_byte(char c)
 	char		*tmp;
 	char		char_str[2];
 
-	printf("%c\n", c);
 	if (!c)
 	{
 		print_msg(msg);
@@ -62,7 +60,6 @@ void	append_bit(char c)
 	if (ft_strlen(str) == 8)
 	{
 		chr = ft_atoi_base(str, "01");
-		printf("%s\n", str);
 		append_byte(chr);
 		free(str);
 		str = NULL;

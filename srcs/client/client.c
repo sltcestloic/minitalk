@@ -13,7 +13,6 @@ void	send_pid(int pid)
 	while (pid_str[i])
 	{
 		binary = ascii_to_binary(pid_str[i]);
-		printf("send %c = %s\n", pid_str[i], binary);
 		while (binary[j])
 		{
 			if (binary[j] == '0')
@@ -33,7 +32,7 @@ void	handle_response(int id)
 {
 	if (id == SIGUSR1)
 	{
-		printf("Bien recu !\n");
+		printf("%sMessage recu !%s\n", HGREEN, RESET);
 		exit(0);
 	}
 }
@@ -53,6 +52,7 @@ int	main(int ac, char **av)
 	msg = av[2];
 	send_msg(msg, pid);
 	send_null(pid);
+	usleep(1000);
 	send_pid(pid);
 	send_null(pid);
 	while (1)

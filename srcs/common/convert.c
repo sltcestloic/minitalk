@@ -1,23 +1,5 @@
 #include "minitalk.h"
 
-char	*rev_str(char *str)
-{
-	int	i;
-	int	swap;
-	int	size;
-
-	size = ft_strlen(str);
-	i = 0;
-	while (i < size / 2)
-	{
-		swap = str[i];
-		str[i] = str[size - (i + 1)];
-		str[size - (i + 1)] = swap;
-		++i;
-	}
-	return (str);
-}
-
 char	*ascii_to_binary(unsigned char nbr)
 {
 	int		i;
